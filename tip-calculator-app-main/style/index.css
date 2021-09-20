@@ -1,0 +1,222 @@
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+    --cian: rgb(38, 192, 171);
+    --dark-cyan: hsl(183, 100%, 15%);
+    --grayish-cyan: hsl(186, 14%, 43%);
+    --dark-grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+    --border-radius: 0.5rem;
+    --transition: all 0.2s ease-in-out;
+    --box-shadow: 0 4px 6px -1px rgba(38, 192, 171, 0.1),
+      0 2px 4px -1px rgba(38, 192, 171, 0.06);
+  }
+  
+  body {
+    background-color: var(--light-grayish-cyan);
+    font-family: "Space Mono", sans-serif;
+    display: grid;
+    place-items: center;
+  }
+  
+  .title {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+  
+  .section-action {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+    place-items: center;
+    border-radius: 1rem;
+    margin: 2rem 0;
+    min-width: 300px;
+    overflow: hidden;
+  }
+  
+  .left-content,.right-content {
+    min-width: 100%;
+    padding: 2rem;
+    overflow: hidden;
+  }
+  
+  .right-content {
+    background-color: var(--dark-cyan);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .total-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .total-action > p {
+    text-align: left;
+    color: var(--white);
+  }
+  #person {
+    color: var(--dark-grayish-cyan);
+    font-weight: 500;
+  }
+  .total {
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--cian);
+  }
+  .left-content {
+    border-radius: var(--border-radius);
+    padding: 2rem;
+  }
+  
+  #bill {
+    margin-top: 0;
+    width: 100%;
+    background-image: url("../images/icon-dollar.svg");
+    background-position: left;
+    padding: 0.25rem;
+    background-position: 1rem 1rem;
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: end;
+    margin-bottom: 0.5rem;
+  }
+  #bill:focus,#people-action:focus {
+    border: 1px solid var(--cian);
+    box-shadow: var(--box-shadow);
+  }
+  #bill,#people-action {
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    padding: 0.5rem;
+    background-color: var(--grayish-cyan);
+    border: none;
+    font-family: "Space Mono";
+    font-size: 24px;
+    width: 100%;
+    transition: var(--transition);
+  }
+  
+  .tip-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  input:hover {
+    cursor: pointer;
+  }
+  
+  .btn-action,.custom-action {
+    background-color: var(--dark-cyan);
+    padding: 0.5rem 0.125rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 24px;
+    font-weight: 500;
+    outline: none;
+    color: var(--white);
+  }
+  
+  .btn-action:active,.custom-action:active {
+    background-color: var(--light-grayish-cyan);
+  }
+  .btn-action:hover {
+    cursor: pointer;
+    background-color: var(--cian);
+    color: var(--dark-cyan);
+  }
+  .custom-action {
+    text-align: center;
+    background-color: var(--grayish-cyan);
+    color: var(--dark-cyan);
+  }
+  .custom-action:focus {
+    border: 2px solid var(--cian);
+    box-shadow: var(--box-shadow);
+  }
+ .action {
+    text-transform: capitalize;
+    font-weight: 500;
+  }
+  #people-action {
+    background: url("../images/icon-person.svg");
+    background-repeat: no-repeat;
+    background-position: 1rem 1rem;
+    background-color: var(--grayish-cyan);
+    text-align: right;
+  }
+  .reset-action {
+    min-width: 100%;
+    padding: 1rem 1.5rem;
+    margin-top: auto;
+    background-color: var(--cian);
+    border-radius: var(--border-radius);
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: "Space Mono";
+  }
+  .reset-action:hover {
+    background-color: rgb(112, 221, 206);
+  }
+  .btn-active {
+    background-color: var(--cian);
+  }
+  .people-label {
+    display: flex;
+    justify-content: space-between;
+  }
+  .error {
+    display: none;
+    color: red;
+    text-align: right;
+    font-weight: 900;
+    word-spacing: 2px;
+    margin-right: 10px;
+  }
+  
+ 
+  @media screen and (min-width: 1120px) {
+    .section-action {
+      grid-template-columns: repeat(2, 1fr);
+      width: 75vw;
+    }
+  
+    .container {
+      max-height: 90vh;
+    }
+    .tip-box {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  @media screen and (min-width: 836px) {
+    .section-action {
+      grid-template-columns: repeat(2, 1fr);
+      width: 75vw;
+    }
+    .container {
+      max-height: 70vh;
+    }
+  }
